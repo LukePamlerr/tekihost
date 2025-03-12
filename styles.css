@@ -1,58 +1,287 @@
-/* Features Section */
-.features {
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+}
+
+.logo {
+    color: #ff0000;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff0000;
+}
+
+.menu-toggle {
+    display: none;
+    color: #ff0000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(45deg, #ff0000, #000);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.cta-btn {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.cta-btn:hover {
+    background: #d32f2f;
+}
+
+/* Services Section */
+.services {
     padding: 3rem 2rem;
     text-align: center;
 }
 
-.features h2 {
+.services h2 {
     color: #ff0000;
     margin-bottom: 2rem;
 }
 
-.features-grid {
+.services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.feature-card {
+.service-card {
     background: #1a1a1a;
     padding: 2rem;
     border-radius: 5px;
     transition: transform 0.3s;
 }
 
-.feature-card:hover {
+.service-card:hover {
     transform: translateY(-10px);
 }
 
-.feature-card h3 {
+.service-card h3 {
     color: #ff0000;
 }
 
-/* Terms, Cookie, Privacy Sections */
-.terms, .cookie, .privacy {
+/* Contact Section */
+.contact {
     padding: 3rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+    text-align: center;
 }
 
-.terms h2, .cookie h2, .privacy h2 {
+.contact h2 {
     color: #ff0000;
-    margin-bottom: 1rem;
-}
-
-.last-updated {
-    font-size: 0.9rem;
-    color: #b0b0b0;
     margin-bottom: 2rem;
 }
 
-.terms-content h3, .cookie-content h3, .privacy-content h3 {
-    color: #ff0000;
-    margin: 1.5rem 0 0.5rem;
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
-.terms-content p, .cookie-content p, .privacy-content p {
-    margin-bottom: 1rem;
+#contact-form input,
+#contact-form textarea {
+    padding: 0.8rem;
+    background: #1a1a1a;
+    border: 1px solid #ff0000;
+    color: #fff;
+}
+
+#contact-form textarea {
+    resize: none;
+    height: 150px;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.pricing h2 {
+    color: #ff0000;
+    margin-bottom: 2rem;
+}
+
+.pricing-toggle {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ff0000;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: #d32f2f;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.pricing-card h3 {
+    color: #ff0000;
+}
+
+.price {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.price span {
+    font-size: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #1a1a1a;
+}
+
+footer a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
 }
